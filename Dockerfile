@@ -22,9 +22,8 @@ RUN pwd
 RUN cmake ../
 RUN make
 WORKDIR /home/doorbell
-RUN git clone https://github.com/seanparsons/watcher.git
+RUN git clone https://github.com/seanparsons/watcher.git && cd ./watcher && git checkout 2aa5422aa2e7ad65651e76dee9a16e9be3c54430
 WORKDIR /home/doorbell/watcher
-RUN git checkout 06f44cbc95122d8a51dde85b6536e6e408778189
 RUN cabal update
 RUN cabal install cabal-install
 RUN /home/doorbell/.cabal/bin/cabal update
