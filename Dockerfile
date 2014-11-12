@@ -28,7 +28,7 @@ WORKDIR /home/doorbell
 RUN cabal update
 RUN cabal install cabal-install
 RUN /home/doorbell/.cabal/bin/cabal update
-RUN git clone https://github.com/seanparsons/watcher.git && cd ./watcher && git checkout 2aa5422aa2e7ad65651e76dee9a16e9be3c54430
+RUN git clone https://github.com/seanparsons/watcher.git && cd ./watcher && git checkout 9a41f6ef1a18699973c381d85b835e35322d24c2
 WORKDIR /home/doorbell/watcher
 RUN git checkout master
 RUN /home/doorbell/.cabal/bin/cabal sandbox init
